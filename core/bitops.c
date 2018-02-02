@@ -11,7 +11,7 @@ static void inline get_bit_pos(int n, int *x, int *y)
 int op_bits(uint32_t *bit_map, int n, bit_ops_t ops)
 {
 	int x, y, result = 0;
-	
+
 	if (!bit_map)
 		return -EINVAL;
 
