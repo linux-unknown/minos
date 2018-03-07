@@ -462,3 +462,4 @@ int vm_memory_init(vm_t *vm)
 
 	return 0;
 }
+
