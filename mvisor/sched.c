@@ -146,7 +146,7 @@ void switch_to_vcpu(vcpu_t *current, vcpu_t *next)
 	 * to the current vcpu
 	 */
 	if ((current != NULL) && (current != next))
-		save_vcpu_module_state(current);		
+		save_vcpu_module_state(current);
 
 	/*
 	 * restore the next vcpu's context to the real
