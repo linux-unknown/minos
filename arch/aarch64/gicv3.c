@@ -77,7 +77,7 @@ int gicv3_set_irq_type(uint32_t irq, uint32_t type)
 	
 	spin_lock(&gicv3_lock);
 
-	if (irq > GICV3_NR_LOCAL_IRQS)
+	if (irq >= GICV3_NR_LOCAL_IRQS)
 		base = (void *)gicd_base + GICD_ICFGR + (irq / 16) * 4;
 	else
 		base = (void *)gicr_sgi_base() + GICR_ICFGR1;
@@ -309,7 +309,7 @@ void gicv3_unmask_irq(uint32_t irq)
 		iowrite32(gicd_base + GICD_ISENABLER + (irq / 32) * 4, mask);
 		gicv3_gicd_wait_for_rwp();
 	}
-	
+
 	spin_unlock(&gicv3_lock);
 }
 

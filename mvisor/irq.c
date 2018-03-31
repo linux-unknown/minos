@@ -120,7 +120,7 @@ void __virq_enable(uint32_t virq, int enable)
 	irq = virq_to_irq(virq);
 	if (irq == BAD_IRQ)
 		return;
-	
+
 	__irq_enable(irq, enable);
 }
 
