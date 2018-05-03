@@ -145,7 +145,7 @@ int vsprintf(char *buf, const char *fmt, va_list arg)
 			*str++ = *fmt;
 			continue;
 		}
-		
+
 		fmt++;
 		switch (*fmt) {
 			case 'd':
@@ -206,7 +206,7 @@ int sprintf(char *str, const char *format, ...)
 {
 	va_list arg;
 	int count;
-	
+
 	va_start(arg, format);
 	count = vsprintf(str, format, arg);
 	va_end(arg);
